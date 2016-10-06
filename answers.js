@@ -15,7 +15,7 @@ function printPositives(array) {
     return positives;
 }
 
-console.log(printPositives(arrayOfNumbers));
+//console.log(printPositives(arrayOfNumbers));
 
 //Similar to the previous exercise, write a function called getPositives that 
 // takes an array and uses the filter method to return a new array with only the positive numbers.
@@ -32,4 +32,39 @@ function getPositives(array) {
     return onlyPos;
 }
 
-console.log(getPositives(arrayOfNumbers));
+//console.log(getPositives(arrayOfNumbers));
+
+
+// Re-do exercise 1 by first filtering the input array, and then printing the numbers
+// from the filtered array. Your code will look something like: 
+// return arr.filter(...).forEach(...).
+
+function filteredArray(array) {
+    array.filter(function(num) {
+        return num >= 0
+    }).forEach(function(item) {
+        console.log(item);
+    })    
+    
+}
+
+console.log(filteredArray(arrayOfNumbers));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

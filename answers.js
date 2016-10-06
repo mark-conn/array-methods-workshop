@@ -57,18 +57,19 @@ function filteredArray(array) {
 var array = [0, 3, -4, -6, 5];
 
 function filterArray(callback, array) {
-    var newArray = [];
     return array.filter(onlyPos)
-            newArray.push(number);
-        }
+    }
+
 
 function onlyPos(num) {
-    if(num >= 0) {
-        return true;
-    }
+   return num >= 0;
 }
 
+
+
 console.log(filterArray(onlyPos, array));
+
+
 
 
 

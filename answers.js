@@ -48,10 +48,27 @@ function filteredArray(array) {
     
 }
 
-console.log(filteredArray(arrayOfNumbers));
+//console.log(filteredArray(arrayOfNumbers));
 
 
+// Write a function called filterArray that takes a callback function and an array as arguments. 
+// Your filterArray function should return a new array that contains only the elements where the 
+// callback function returns true.
+var array = [0, 3, -4, -6, 5];
 
+function filterArray(callback, array) {
+    var newArray = [];
+    return array.filter(onlyPos)
+            newArray.push(number);
+        }
+
+function onlyPos(num) {
+    if(num >= 0) {
+        return true;
+    }
+}
+
+console.log(filterArray(onlyPos, array));
 
 
 

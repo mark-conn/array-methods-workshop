@@ -67,8 +67,24 @@ function onlyPos(num) {
 
 
 
-console.log(filterArray(onlyPos, array));
+//console.log(filterArray(onlyPos, array));
 
+
+// Write a function called longestWord that takes a string as argument, 
+// and returns the longest word in the string. 
+// You should use Array.prototype.reduce to do your work.
+function longestWord(string) {
+    string = string.split(" ");
+    return string.reduce(function(prevWord, word) {
+        if(prevWord.length > word.length) {
+            return prevWord;
+            } else {
+            return word;
+            }
+    })
+}
+
+console.log(longestWord("Huuuuuuuugest word in this string"));
 
 
 

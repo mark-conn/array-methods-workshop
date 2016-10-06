@@ -161,12 +161,10 @@ function highLowTwo(array) {
             acc.highest = num;
         }
         
-       
         if (num < acc.lowest) {
             acc.secondLowest = acc.lowest;
             acc.lowest = num;
         }
-        
         return acc;
     }, {
         highest: -Infinity,
@@ -178,14 +176,46 @@ function highLowTwo(array) {
 
 }
 
-console.log(highLowTwo(arrayOfNumbers));
+//console.log(highLowTwo(arrayOfNumbers));
+
+
+// Write a function called countChars that takes a string, and returns an object 
+// where the keys are letters, and the value is the number of times that letter appears.
+
+// For example, with input "hello world", the output should be:
+
+// {
+//   "h": 1,
+//   "e": 1,
+//   "l": 3,
+//   "o": 2,
+//   "w": 1,
+//   "r": 1,
+//   "d": 1
+// }
+// NOTE: Unlike arrays, objects don’t have any ordering on them. 
+// When you print your object on the console, your keys may be displayed in a 
+// different order, and it does not matter.
+
+
+
+/*
+    go through the array of single letters
+    make every letter a property in the object
+    next iteration, if letter === letter, + 1 to property value
+
+*/
+function countChars(string) {
+    string = string.split("");
+    return string.reduce(function(obj, letter) {
+      if(obj[letter]) {
+          obj[letter] +=1;
+      } else {
+          obj[letter] = 1;
+      } 
+        return obj;
+    }, {})
     
+}
 
-
-
-
-
-
-
-
-
+console.log(countChars("Lets see a sweet ass object, boy"));

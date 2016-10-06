@@ -219,4 +219,105 @@ function countChars(string) {
     
 }
 
-console.log(countChars("Lets see a sweet ass object, boy"));
+//console.log(countChars("Lets see a sweet ass object, boy"));
+
+// Starting on week 3 of the bootcamp, we will be learning about databases. 
+// Databases are useful for saving data for long periods of time.
+
+// Contrary to a JavaScript program, where all the data disappears when the program 
+// terminates, databases keep their data "forever".
+
+// In this exercise, we’re going to imagine that we are storing people information 
+// in a database, and that we queried our database to retrieve a list of people.
+
+// Our database returns to us an array of people objects, and each of them has a 
+// unique ID that the database uses to refer to it.
+
+// Here’s what our person data could look like:
+
+// [
+//   {
+//     "id": "KeXoYg92is",
+//     "firstName": "John",
+//     "lastName": "Smith",
+//     "email": "john@smith.com"
+//   },
+//   {
+//     "id": "NkALmSWtUp",
+//     "firstName": "Donald",
+//     "lastName": "Duck",
+//     "email": "don@disney.com"
+//   },
+//   {
+//     "id": "m7LPbJYSUg",
+//     "firstName": "John",
+//     "lastName": "Vader",
+//     "email": "vader@darkside.com"
+//   }
+// ]
+// For this exercise, we want to use Array.prototype.reduce to transform our array of 
+// people into an object, keyed with the unique ID.
+
+// The end result should look like this:
+
+// {
+//   "KeXoYg92is": {
+//     "id": "KeXoYg92is",
+//     "firstName": "John",
+//     "lastName": "Smith",
+//     "email": "john@smith.com"
+//   },
+//   "NkALmSWtUp": {
+//     "id": "NkALmSWtUp",
+//     "firstName": "Donald",
+//     "lastName": "Duck",
+//     "email": "don@disney.com"
+//   },
+//   "m7LPbJYSUg": {
+//     "id": "m7LPbJYSUg",
+//     "firstName": "John",
+//     "lastName": "Vader",
+//     "email": "vader@darkside.com"
+//   }
+// }
+// This object could be useful if we are often looking up people by their unique ID.
+// Write a function called peopleById that takes an array of people and returns an 
+// object where each person is keyed by their unique ID.
+
+// You have effectively created what we call an index, not unlike the one you have 
+// in your phonebook.
+
+var peopleArray = [
+  {
+    "id": "KeXoYg92is",
+    "firstName": "John",
+    "lastName": "Smith",
+    "email": "john@smith.com"
+  },
+  {
+    "id": "NkALmSWtUp",
+    "firstName": "Donald",
+    "lastName": "Duck",
+    "email": "don@disney.com"
+  },
+  {
+    "id": "m7LPbJYSUg",
+    "firstName": "John",
+    "lastName": "Vader",
+    "email": "vader@darkside.com"
+  }
+]
+
+// Write a function called peopleById that takes an array of people and returns an 
+// object where each person is keyed by their unique ID.
+
+function peopleById(array) {
+
+    return array.reduce(function(acc, personObj) {
+        acc[personObj.id] = personObj;
+        return acc;
+    }, {})
+        
+}
+
+console.log(peopleById(peopleArray));

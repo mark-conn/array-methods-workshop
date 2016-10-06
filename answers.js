@@ -206,8 +206,9 @@ function highLowTwo(array) {
 
 */
 function countChars(string) {
-    string = string.split("");
-    return string.reduce(function(obj, letter) {
+
+    
+    return string.split("").filter(function(l) {return (l !== " " && l !==  ",");}).reduce(function(obj, letter) {
       if(obj[letter]) {
           obj[letter] +=1;
       } else {

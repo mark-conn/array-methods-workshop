@@ -17,3 +17,19 @@ function printPositives(array) {
 
 console.log(printPositives(arrayOfNumbers));
 
+//Similar to the previous exercise, write a function called getPositives that 
+// takes an array and uses the filter method to return a new array with only the positive numbers.
+
+function getPositives(array) {
+    var onlyPos = [];
+    array.filter(function(number) {
+        if(number >= 0) {
+            onlyPos.push(number);
+        }
+        
+    })
+    
+    return onlyPos;
+}
+
+console.log(getPositives(arrayOfNumbers));

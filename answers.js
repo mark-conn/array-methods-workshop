@@ -84,8 +84,32 @@ function longestWord(string) {
     })
 }
 
-console.log(longestWord("Huuuuuuuugest word in this string"));
+//console.log(longestWord("Huuuuuuuugest word in this string"));
 
+
+// Write a function called countVowels that takes a string and returns the number of 
+// vowels in the string. You should use Array.prototype.reduce to do your work.
+// For the string "The quick brown fox", the output should be 5 
+// because there is one e, one u, one i and two os.
+
+// Hint: You can use String.prototype.split again. There is a way to use it to split a 
+// string by character. Try to Google it :)
+
+// Hint 2: You can create an array of vowels and use Array.prototype.indexOf to check if 
+// the current letter is a vowel.
+function countVowels(string) {
+    string = string.split("");
+    var vowels = ["a", "e", "i", "o", "u", "y"];
+    return string.reduce(function(counter, letter) {
+        if(vowels.indexOf(letter) > -1) {
+               counter+=1
+            }
+            return counter;
+        }, 0) 
+    }
+
+
+//console.log(countVowels("ahis string has how many vowels?"));
 
 
 

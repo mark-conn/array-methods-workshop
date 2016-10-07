@@ -320,4 +320,59 @@ function peopleById(array) {
         
 }
 
-console.log(peopleById(peopleArray));
+// console.log(peopleById(peopleArray));
+
+
+// Expanding on the previous exercise, this time we are going to create an index on first names. 
+// Notice how in the previous exercise, each ID was unique. In this case, two people have the same 
+// first name.
+
+// We want to create a function called peopleByFirstName that will take an array of people and 
+// return something that looks like this:
+
+// {
+//   "John": [
+//     {
+//       "id": "KeXoYg92is",
+//       "firstName": "John",
+//       "lastName": "Smith",
+//       "email": "john@smith.com"
+//     },
+//     {
+//       "id": "m7LPbJYSUg",
+//       "firstName": "John",
+//       "lastName": "Vader",
+//       "email": "vader@darkside.com"
+//     }
+//   ],
+//   "Donald": [
+//     {
+//       "id": "NkALmSWtUp",
+//       "firstName": "Donald",
+//       "lastName": "Duck",
+//       "email": "don@disney.com"
+//     }
+//   ]
+// }
+
+// You have effectively created an index on first name. This lets you find all people 
+// called, say, “John” without having to look through the whole results.
+
+function peopleByFirstName(array) {
+    return array.reduce(function(acc, obj) {
+        
+         if(acc[obj.firstName]) {
+            acc[obj.firstName].push(obj); 
+            
+         } else {
+            acc[obj.firstName] = [];
+            acc[obj.firstName].push(obj);
+         }
+        
+        return acc;
+        
+    }, {}) 
+    
+}
+
+//console.log(peopleByFirstName(peopleArray));
